@@ -135,7 +135,8 @@ class Zombie:
 
     def move_to_boy1(self, r=0.5):
         self.state = 'Walk'
-        self.move_slightly_to(-play_mode.boy.x, -play_mode.boy.y)
+        self.move_slightly_to(2 * self.x - play_mode.boy.x,  2 * self.y - play_mode.boy.y)
+        # self.move_slightly_to(1200-play_mode.boy.x, 1024-play_mode.boy.y)
         if self.distance_less_than(play_mode.boy.x, play_mode.boy.y, self.x, self.y, r):
             return BehaviorTree.SUCCESS
         else:
